@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asignación de citas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="../assets/img/logo2.png" alt="SaludYa">
+        </div>
+
+        <nav class="menu">
+
+            <a href="#" class="menu-item active">
+                <img src="../assets/icons/cita.png">
+                <span>Asignación de cita</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <img src="../assets/icons/lista.png">
+                <span>Mis citas</span>
+            </a>
+
+        </nav>
+
+        <a href="#" class="logout">
+            <img src="../assets/icons/logout.png">
+            <span>Cerrar sesión</span>
+        </a>
+
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="content">
+
+        <h1>Asignación de citas</h1>
+
+        <section class="appointment-card">
+
+            <p class="patient-name">Nombre de paciente</p>
+
+            <div class="top-filters">
+
+                <div class="filter-box">
+                    <label>Fecha Deseada</label>
+                    <input type="text" value="30/04/2026">
+                </div>
+
+                <div class="filter-box">
+                    <label>Doctor</label>
+                    <input type="text" value="Escoger Medico tratante">
+                </div>
+
+                <div class="filter-box">
+                    <label>Tipo de atención</label>
+                    <input type="text" value="Presencial / Telesalud">
+                </div>
+
+            </div>
+
+            <div class="form-area">
+
+                <div class="left-form">
+
+                    <input type="text" placeholder="Nombre completo del paciente">
+
+                    <input type="text" placeholder="Tipo de documento del paciente">
+
+                    <input type="text" placeholder="Numero de documento">
+
+                    <input type="text" placeholder="Fecha de cita">
+
+                    <input type="text" placeholder="Tipo de atencion">
+
+                    <textarea placeholder="Motivo consulta"></textarea>
+
+                </div>
+
+                <div class="right-form">
+
+                    <button class="btn-primary">
+                        Confirmar cita
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
