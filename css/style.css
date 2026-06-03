@@ -599,3 +599,718 @@ html,body{
     height: 50px;
     font-size: 20px;
 }
+
+.register-page{
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1146B8 0%, #35E0C3 100%);
+    padding: 35px 70px;
+    font-family: 'Inter', sans-serif;
+}
+
+.register-title{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 34px;
+    margin-bottom: 45px;
+}
+
+.register-logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.register-logo img{
+    width: 260px;
+    height: 90px;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.register-logo img:hover{
+    content: url("../assets/img/logo_hover.png");
+    transform: scale(1.20);
+}
+
+.register-card{
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 70px 110px 50px;
+}
+
+.register-form{
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.form-column{
+    flex: 1;
+}
+
+.form-group{
+    margin-bottom: 32px;
+}
+
+.form-group label{
+    display: block;
+    color: #071C68;
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select{
+    width: 100%;
+    height: 36px;
+    border: 1px solid #D9DEE8;
+    border-radius: 7px;
+    padding: 0 14px;
+    font-size: 15px;
+    color: #071C68;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.18);
+    transition: 0.3s ease;
+}
+
+.form-group input::placeholder{
+    color: #8ECAD2;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group input:focus,
+.form-group select:focus{
+    border-color: #3B82F6;
+    box-shadow: 0 0 10px rgba(59,130,246,0.20);
+}
+
+.warning-box{
+    height: 70px;
+    background: #EAF0FB;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 20px;
+    margin-top: 25px;
+}
+
+.warning-box img{
+    width: 42px;
+}
+
+.warning-box p{
+    color: #071C68;
+    font-size: 14px;
+    text-align: center;
+}
+
+.register-actions{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 78px;
+}
+
+.create-btn,
+.exit-btn{
+    height: 45px;
+    font-size: 17px;
+}
+
+.doctor-dashboard{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: #F5F2FF;
+}
+
+.doctor-sidebar{
+    width: 330px;
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.doctor-logo img{
+    width: 180px;
+}
+
+.doctor-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.doctor-menu-title{
+    color: #071C68;
+    font-size: 26px;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 18px;
+}
+
+.doctor-menu-item,
+.doctor-logout{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: #071C68;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.doctor-menu-item:hover,
+.doctor-logout:hover{
+    transform: translateX(6px);
+}
+
+.doctor-menu-item img,
+.doctor-logout img{
+    width: 32px;
+}
+
+.doctor-content{
+    flex: 1;
+    min-height: 100vh;
+    padding: 55px 70px;
+}
+
+.doctor-content h1{
+    color: #071C68;
+    font-size: 34px;
+    margin-bottom: 22px;
+}
+
+.doctor-summary-card{
+    background: #FFFFFF;
+    max-width: 760px;
+    padding: 20px 55px 55px;
+    margin-bottom: 60px;
+}
+
+.doctor-summary-card h2{
+    text-align: left;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.stats-grid{
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.stat-card{
+    width: 105px;
+    height: 105px;
+    background: #F2EFFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #071C68;
+    transition: 0.3s ease;
+}
+
+.stat-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(59,130,246,0.18);
+}
+
+.stat-card strong{
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.stat-card span{
+    font-size: 15px;
+    text-align: center;
+}
+
+.stat-card.danger{
+    color: red;
+}
+
+.stat-card.success{
+    color: #15803D;
+}
+
+.report-section h2{
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 35px;
+    color: #071C68;
+}
+
+.chart-card{
+    width: 400px;
+    background: #FFFFFF;
+    padding: 25px;
+    margin-left: 90px;
+}
+
+.chart-card h3{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.bar-chart{
+    height: 210px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0 15px 20px;
+}
+
+.bar-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    color: #555;
+}
+
+.bar{
+    width: 45px;
+    background: #8E8E8E;
+}
+
+.bar-10{ height: 150px; }
+.bar-4{ height: 80px; background: #C9C9C9; }
+.bar-3{ height: 60px; }
+.bar-2{ height: 40px; background: #AFAFAF; }
+
+.agenda-content{
+    flex: 1;
+    min-height: 100vh;
+    padding: 60px 70px;
+    background: #F5F2FF;
+}
+
+.agenda-content h1{
+    color: #071C68;
+    font-size: 32px;
+    margin-bottom: 90px;
+}
+
+.agenda-card{
+    max-width: 800px;
+}
+
+.agenda-table{
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    font-size: 18px;
+    color: #111827;
+}
+
+.agenda-table th{
+    color: #071C68;
+    font-size: 28px;
+    text-align: left;
+    padding: 12px 18px;
+    background: #F5F2FF;
+}
+
+.agenda-table td{
+    border: 1px solid #555;
+    padding: 14px 16px;
+}
+
+.agenda-table tbody tr{
+    transition: 0.3s ease;
+}
+
+.agenda-table tbody tr:hover{
+    background: #F4F8FF;
+}
+
+.attention-cell{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.attention-cell span{
+    min-width: 180px;
+}
+.attention-cell button{
+    background: #E4D8EC;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    color: #111827;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.20);
+    transition: 0.3s ease;
+}
+
+.attention-cell button:hover{
+    transform: translateY(-2px);
+    background: #D6C5E3;
+}
+
+.empty-text{
+    color: #8ECAD2;
+}
+
+.doctor-logo{
+    transition: 0.3s ease;
+}
+.doctor-logo:hover{
+    transform: scale(1.20);
+}
+
+.patient-data-content{
+    flex: 1;
+    min-height: 100vh;
+    padding: 25px 40px;
+    background: #F5F2FF;
+}
+
+.patient-data-card{
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 35px 45px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+.patient-data-card h1{
+    color: #071C68;
+    font-size: 28px;
+    margin-bottom: 55px;
+}
+
+.patient-data-form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.patient-field{
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+}
+
+.patient-field label,
+.patient-textarea label{
+    color: #071C68;
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.patient-field input,
+.patient-field select{
+    width: 330px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    border-radius: 7px;
+    padding: 0 14px;
+    font-size: 15px;
+    color: #071C68;
+    outline: none;
+    box-shadow: 0 4px 7px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.patient-field input::placeholder{
+    color: #8ECAD2;
+}
+
+.patient-field select{
+    color: #8ECAD2;
+    background: #FFFFFF;
+}
+
+.patient-field input:hover,
+.patient-field select:hover,
+.patient-field input:focus,
+.patient-field select:focus,
+.patient-textarea textarea:hover,
+.patient-textarea textarea:focus{
+    border-color: #3B82F6;
+    box-shadow: 0 0 10px rgba(59,130,246,0.20);
+}
+
+.patient-textarea{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-textarea textarea{
+    width: 100%;
+    height: 190px;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 35px 18px;
+    font-size: 20px;
+    color: #071C68;
+    resize: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.patient-textarea textarea::placeholder{
+    color: #A0A7B5;
+}
+
+.agenda-create-content{
+    flex: 1;
+    min-height: 100vh;
+    background: #F5F2FF;
+    padding: 28px 35px;
+    overflow-x: hidden;
+}
+
+.agenda-create-card{
+    width: 100%;
+    max-width: 980px;
+    background: #FFFFFF;
+    border-radius: 22px;
+    padding: 38px 42px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+.agenda-create-card h1{
+    color: #071C68;
+    font-size: 34px;
+    margin-bottom: 45px;
+}
+
+.agenda-create-grid{
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 35px;
+    align-items: start;
+}
+
+.agenda-left{
+    width: 100%;
+}
+
+.agenda-field{
+    margin-bottom: 58px;
+}
+
+.agenda-field label{
+    display: block;
+    color: #071C68;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.agenda-field input{
+    width: 100%;
+    max-width: 360px;
+    height: 48px;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-size: 17px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.agenda-field input::placeholder{
+    color: #8ECAD2;
+}
+
+.agenda-field input:hover,
+.agenda-field input:focus{
+    border-color: #1146B8;
+    box-shadow: 0 0 12px rgba(17,70,184,0.22);
+}
+
+.agenda-hours h2{
+    color: #071C68;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hour-select{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.hour-select label{
+    color: #071C68;
+    font-size: 22px;
+    min-width: 42px;
+}
+
+.hour-select select{
+    width: 170px;
+    height: 48px;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-size: 17px;
+    color: #8ECAD2;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.hour-select select:hover,
+.hour-select select:focus{
+    border-color: #1146B8;
+    box-shadow: 0 0 12px rgba(17,70,184,0.22);
+}
+
+.agenda-calendar{
+    width: 330px;
+}
+
+.calendar-box{
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+}
+
+.calendar-app{
+    width: 100%;
+}
+
+.calendar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.calendar-header h3{
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.calendar-header button{
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: #E4D8EC;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.calendar-days,
+.calendar-dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-days span{
+    text-align: center;
+    color: #071C68;
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+.calendar-dates button{
+    height: 40px;
+    border: 1px solid #E5E7EB;
+    background: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.calendar-dates button:hover{
+    background: #EEF4FF;
+}
+
+.calendar-dates button.selected{
+    background: #1146B8;
+    color: #FFFFFF;
+}
+
+.calendar-dates button.inactive{
+    background: #F8F8F8;
+    color: #C0C0C0;
+    cursor: default;
+}
+
+.agenda-warning-section{
+    max-width: 980px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    gap: 28px;
+    align-items: center;
+    
+}
+
+.agenda-warning{
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.agenda-warning img{
+    width: 78px;
+    flex-shrink: 0;
+}
+
+.agenda-warning p{
+    color: #071C68;
+    font-size: 18px;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.agenda-confirm-btn{
+    width: 210px;
+    height: 68px;
+    border: none;
+    border-radius: 12px;
+    background: #1146B8;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    transition: 0.3s ease;
+}
+
+.agenda-confirm-btn:hover{
+    background: #0B3692;
+    transform: translateY(-3px);
+}

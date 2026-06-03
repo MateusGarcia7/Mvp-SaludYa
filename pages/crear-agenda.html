@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear agenda</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="doctor-dashboard">
+
+  <aside class="doctor-sidebar">
+
+    <div class="doctor-logo">
+      <img src="../assets/img/logo2.png" alt="SaludYa">
+    </div>
+
+    <nav class="doctor-menu">
+
+      <a href="#" class="doctor-menu-title">
+        Crear agenda
+      </a>
+
+      <a href="menu-doctor.html" class="doctor-menu-item">
+        <img src="../assets/icons/volver.png" alt="">
+        <span>Volver</span>
+      </a>
+
+    </nav>
+
+    <a href="#" class="doctor-logout">
+      <img src="../assets/icons/logout.png" alt="">
+      <span>Cerrar sesión</span>
+    </a>
+
+  </aside>
+
+  <main class="agenda-create-content">
+
+    <section class="agenda-create-card">
+
+      <h1>Crear agenda</h1>
+
+      <div class="agenda-create-grid">
+
+        <div class="agenda-left">
+
+          <div class="agenda-field">
+            <label>Nombre del Doctor (a)</label>
+            <input type="text" placeholder="Nombre del Doctor">
+          </div>
+
+          <div class="agenda-hours">
+
+            <h2>Franja horaria</h2>
+
+            <div class="hour-select">
+              <label>De :</label>
+
+              <select>
+                <option>06:00 am</option>
+                <option>07:00 am</option>
+                <option>08:00 am</option>
+              </select>
+            </div>
+
+            <div class="hour-select">
+              <label>A :</label>
+
+              <select>
+                <option>05:00 pm</option>
+                <option>06:00 pm</option>
+                <option>07:00 pm</option>
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="calendar-box calendar-app">
+
+          <div class="calendar-header">
+            <button type="button" id="prevMonth">‹</button>
+            <h3 id="monthYear"></h3>
+            <button type="button" id="nextMonth">›</button>
+          </div>
+
+          <div class="calendar-days">
+            <span>Dom</span>
+            <span>Lun</span>
+            <span>Mar</span>
+            <span>Mié</span>
+            <span>Jue</span>
+            <span>Vie</span>
+            <span>Sáb</span>
+          </div>
+
+          <div class="calendar-dates" id="calendarDates"></div>
+
+        </div>
+
+      </div>
+
+      <section class="agenda-warning-section">
+
+        <div class="agenda-warning">
+          <img src="../assets/icons/warning.png" alt="Advertencia">
+
+          <p>
+            Recuerde que no se pueden crear agendas
+            con dias y franjas horarias que ya ha
+            asignado anteriormente
+          </p>
+        </div>
+
+        <button class="agenda-confirm-btn">
+          Confirmar agenda
+        </button>
+
+      </section>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

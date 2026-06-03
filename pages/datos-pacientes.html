@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos del paciente</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="doctor-dashboard">
+
+  <aside class="doctor-sidebar">
+
+    <div class="doctor-logo">
+      <img src="../assets/img/logo2.png" alt="SaludYa">
+    </div>
+
+    <nav class="doctor-menu">
+      <a href="#" class="doctor-menu-title">Datos del paciente</a>
+
+      <a href="citas-asignadas.html" class="doctor-menu-item">
+        <img src="../assets/icons/volver.png" alt="">
+        <span>Volver</span>
+      </a>
+    </nav>
+
+    <a href="#" class="doctor-logout">
+      <img src="../assets/icons/logout.png" alt="">
+      <span>Cerrar sesión</span>
+    </a>
+
+  </aside>
+
+  <main class="patient-data-content">
+
+    <section class="patient-data-card">
+
+      <h1>Datos del paciente</h1>
+
+      <form class="patient-data-form">
+
+        <div class="patient-field">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Nombre del paciente">
+        </div>
+
+        <div class="patient-field">
+          <label>Tipo de documento</label>
+          <select>
+            <option selected disabled>Seleccione</option>
+            <option>CC</option>
+            <option>TI</option>
+            <option>CE</option>
+            <option>Pasaporte</option>
+          </select>
+        </div>
+
+        <div class="patient-field">
+          <label>Número de documento</label>
+          <input type="text" placeholder="1111112222">
+        </div>
+
+        <div class="patient-field">
+          <label>Edad</label>
+          <input type="text" placeholder="Edad del paciente">
+        </div>
+
+        <div class="patient-field">
+          <label>Correo electronico</label>
+          <input type="email" placeholder="usuario@correo.com">
+        </div>
+
+        <div class="patient-textarea">
+          <label>Motivo consulta</label>
+          <textarea placeholder="Observaciones médicas del paciente..."></textarea>
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
