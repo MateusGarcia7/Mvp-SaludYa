@@ -18,18 +18,18 @@
 
   <section class="register-card">
 
-    <form class="register-form">
+    <form class="register-form" id="register-form">
 
       <div class="form-column">
 
         <div class="form-group">
           <label>Nombre completo</label>
-          <input type="text" placeholder="Nombre completo">
+          <input type="text" placeholder="Nombre completo" id="name" required>
         </div>
 
         <div class="form-group">
           <label>Sexo</label>
-          <select>
+          <select id="gender" required>
             <option selected disabled>
                 Seleccione
              </option> 
@@ -40,12 +40,12 @@
 
         <div class="form-group">
           <label>Correo electronico</label>
-          <input type="email" placeholder="usuario@correo.com">
+          <input type="email" placeholder="usuario@correo.com" id="email" required>
         </div>
 
         <div class="form-group">
           <label>Edad</label>
-          <input type="text" placeholder="0 meses a 150 años">
+          <input type="text" placeholder="0 meses a 150 años" id="age" required>
         </div>
 
         <div class="warning-box">
@@ -59,7 +59,7 @@
 
         <div class="form-group">
           <label>Tipo Documento identidad</label>
-          <select>
+          <select id="document-type" required>
              <option selected disabled>
                 Seleccione
              </option>
@@ -80,21 +80,21 @@
 
         <div class="form-group">
           <label>Numero Documento de identidad</label>
-          <input type="text" placeholder="1111111112">
+          <input type="text" placeholder="1111111112" id="document-number" required>
         </div>
 
         <div class="form-group">
           <label>Contraseña</label>
-          <input type="password" placeholder="************">
+          <input type="password" placeholder="************" id="password" required>
         </div>
 
         <div class="form-group">
           <label>Repetir contraseña</label>
-          <input type="password" placeholder="************">
+          <input type="password" placeholder="************" id="confirm-password" required>
         </div>
 
         <div class="register-actions">
-          <button type="button" class="btn-primary create-btn">Crear usuario</button>
+          <button type="submit" class="btn-primary create-btn">Crear usuario</button>
           <button type="button" class="btn-primary exit-btn">Salir</button>
         </div>
 
@@ -107,4 +107,5 @@
 </main>
 
 </body>
+<script src="../js/registro.js"></script>
 </html>
