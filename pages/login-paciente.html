@@ -17,20 +17,21 @@
 
       <h1>Ingreso como Paciente</h1>
 
-      <form class="login-form">
+      <form class="login-form" id="loginForm">
         <label for="email">Correo electronico</label>
-        <input type="email" id="email" placeholder="usuario@correo.com">
+        <input type="email" id="email" placeholder="usuario@correo.com" required>
 
         <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="********">
+        <input type="password" id="password" placeholder="********" required>
 
         <a href="recuperar.html" class="forgot-password">Olvide contraseña</a>
 
-        <button type="button" class="btn-primary">INGRESAR</button>
+        <button type="submit" class="btn-primary">INGRESAR</button>
       </form>
 
     </section>
   </main>
 
 </body>
+<script src="../js/loginPaciente.js"></script>
 </html>
