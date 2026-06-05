@@ -40,7 +40,5 @@ registerForm.reset();
 });
 
 
-paciente.textContent = `Paciente: ${usuarioLogueado.nombre}`
-
 
 

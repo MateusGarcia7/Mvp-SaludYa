@@ -11,24 +11,30 @@ const usuarioEncontrado = usuarios.find(usuario => usuario.email === email && us
 
   if (usuarioEncontrado) {
 
+
+  if (usuarioEncontrado.rol !== "admin" && usuarioEncontrado.rol !== "doctor") {
+    alert("No tienes permisos para acceder");
+    return;
+  }
+    
    const sesion = {
     id: usuarioEncontrado.id,
-    nombre: usuarioEncontrado.name,
+    nombre: usuarioEncontrado.nombre,
     email: usuarioEncontrado.email,
     role: usuarioEncontrado.rol
 };
 
 localStorage.setItem(
-    "usuarioLogueado",
-    JSON.stringify(sesion)
+  "usuarioLogueado",
+  JSON.stringify(sesion)
 );
-    window.location.href = '../pages/asignacion.html';
+    window.location.href = '../pages/menu-doctor.html';
   } else {
     alert('Credenciales incorrectas');
   }
   const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
   if (usuario) {
-    window.location.href = "../pages/asignacion.html";
+    window.location.href = "../pages/menu-doctor.html";
   }
 });

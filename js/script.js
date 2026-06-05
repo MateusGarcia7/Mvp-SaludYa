@@ -5,6 +5,26 @@ const nextMonth = document.getElementById("nextMonth");
 
 let currentDate = new Date(2026, 4, 1);
 
+function crearAdminPorDefecto() {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const adminExiste = usuarios.find((usuario) => usuario.rol === "admin");
+
+  if (!adminExiste) {
+    usuarios.push({
+      id: Date.now(),
+      name: "Administrador",
+      email: "admin@admin.com",
+      password: "admin123",
+      rol: "admin",
+    });
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
+}
+
+crearAdminPorDefecto();
+
 function renderCalendar() {
     if (!monthYear || !calendarDates) return;
 

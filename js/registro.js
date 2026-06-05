@@ -37,6 +37,7 @@ form.addEventListener("submit", (e) => {
   }
   const nuevoUsuario = {
     id: Date.now(),
+    rol: "paciente",
     name,
     email,
     password,
