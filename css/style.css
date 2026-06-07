@@ -587,6 +587,23 @@ html,body{
     transition: 0.3s ease;
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
+.btn-danger{
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #b83211;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.btn-danger:hover{
+    transform: translateY(-3px);
+    background: #8B2C0D;
+}
 
 .btn-secondary:hover{
     transform: translateY(-3px);

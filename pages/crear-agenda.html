@@ -29,7 +29,7 @@
 
     </nav>
 
-    <a href="#" class="doctor-logout">
+    <a href="#" class="doctor-logout" id="logoutBtn">
       <img src="../assets/icons/logout.png" alt="">
       <span>Cerrar sesión</span>
     </a>
@@ -48,7 +48,7 @@
 
           <div class="agenda-field">
             <label>Nombre del Doctor (a)</label>
-            <input type="text" placeholder="Nombre del Doctor">
+            <input type="text" id="doctorNombre" readonly >
           </div>
 
           <div class="agenda-hours">
@@ -58,7 +58,7 @@
             <div class="hour-select">
               <label>De :</label>
 
-              <select>
+              <select id="horaInicio">
                 <option>06:00 am</option>
                 <option>07:00 am</option>
                 <option>08:00 am</option>
@@ -68,7 +68,7 @@
             <div class="hour-select">
               <label>A :</label>
 
-              <select>
+              <select id="horaFin">
                 <option>05:00 pm</option>
                 <option>06:00 pm</option>
                 <option>07:00 pm</option>
@@ -115,10 +115,21 @@
           </p>
         </div>
 
-        <button class="agenda-confirm-btn">
-          Confirmar agenda
-        </button>
+        <button
+          class="agenda-confirm-btn"
+          id="btnGuardarAgenda"
+            >
+           Confirmar agenda 
+            </button>
+<section class="agenda-list">
 
+  <h2 style="color: blue;">Agendas creadas</h2>
+
+  <div id="listaAgendas">
+
+  </div>
+
+</section>
       </section>
 
     </section>
@@ -127,7 +138,7 @@
 
 </div>
 
-<script src="../js/script.js"></script>
+<script src="../js/crearAgenda.js"></script>
 
 </body>
 </html>

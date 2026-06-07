@@ -1,7 +1,7 @@
-const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const registerForm = document.getElementById("register-form");
 const usuario = JSON.parse(localStorage.getItem("usuarios")); 
 
+const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
 if (!usuarioLogueado) {
   window.location.href = "login-paciente.html";
@@ -39,6 +39,17 @@ alert("Cita registrada exitosamente");
 registerForm.reset();
 
 });
+
+
+const crearAgenda = document.getElementById("crearAgenda");
+
+if (
+  !usuarioLogueado ||
+  (usuarioLogueado.role !== "doctor" && usuarioLogueado.role !== "admin")
+) {
+  crearAgenda.style.display = "none";
+}
+
 
 
 

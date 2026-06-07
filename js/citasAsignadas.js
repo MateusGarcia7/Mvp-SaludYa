@@ -7,33 +7,57 @@ logout.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
-function mostrarCitas() {
+const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+function mostrarCitas(listaCitas) {
   const lista = document.getElementById("listaCitas");
-
-  let citas = JSON.parse(localStorage.getItem("citas")) || [];
 
   lista.innerHTML = "";
 
-  citas.forEach((cita) => {
+  listaCitas.forEach((cita) => {
     lista.innerHTML += `
-          <tr>
-            <td>${cita.fechaDeseada}</td>
-            <td>${cita.paciente}</td>
-            <td>
-              <div class="attention-cell">
-                <span>${cita.tipoAtencion}</span>
+      <tr>
+        <td>${cita.fechaDeseada}</td>
+        <td>${cita.paciente}</td>
+        <td>
+          <div class="attention-cell">
+            <span>${cita.tipoAtencion}</span>
 
-                <button onclick="eliminarCita(${cita.id})">
-                    Eliminar
-                </button>
-              </div>
-            </td>
-          </tr>
-
-        `;
+            <button onclick="eliminarCita(${cita.id})">
+              Eliminar
+            </button>
+          </div>
+        </td>
+      </tr>
+    `;
   });
 }
-mostrarCitas();
+
+let citas = JSON.parse(localStorage.getItem("citas")) || [];
+
+if (usuarioLogueado.role === "doctor" || usuarioLogueado.role === "admin") {
+  mostrarCitas(citas);
+} else if (usuarioLogueado.role === "paciente") {
+  const misCitas = citas.filter(
+    (cita) => cita.paciente === usuarioLogueado.nombre,
+  );
+
+  mostrarCitas(misCitas);
+}
+
+function cargarCitas() {
+  let citas = JSON.parse(localStorage.getItem("citas")) || [];
+
+  if (usuarioLogueado.role === "doctor" || usuarioLogueado.role === "admin") {
+    mostrarCitas(citas);
+  } else {
+    const misCitas = citas.filter(
+      (cita) => cita.paciente === usuarioLogueado.nombre,
+    );
+
+    mostrarCitas(misCitas);
+  }
+}
+
 
 function eliminarCita(id) {
   let citas = JSON.parse(localStorage.getItem("citas")) || [];
@@ -48,5 +72,23 @@ function eliminarCita(id) {
 
   localStorage.setItem("citas", JSON.stringify(citas));
 
-  mostrarCitas();
+  cargarCitas();
 }
+
+const crearAgenda = document.getElementById("crearAgenda");
+if (
+  crearAgenda &&
+  (!usuarioLogueado ||
+    (usuarioLogueado.role !== "doctor" && usuarioLogueado.role !== "admin"))
+) {
+  crearAgenda.style.display = "none";
+}
+
+if (
+  !usuarioLogueado ||
+  (usuarioLogueado.role !== "doctor" && usuarioLogueado.role !== "admin")
+) {
+  crearAgenda.style.display = "none";
+}
+
+  
