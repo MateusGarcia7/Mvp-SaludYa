@@ -17,20 +17,20 @@
     </div>
 
     <nav class="doctor-menu">
-      <a href="#" class="doctor-menu-title">Menu Principal</a>
+      <a href="./menu-doctor.html" class="doctor-menu-title">Menu Principal</a>
 
-      <a href="#" class="doctor-menu-item">
+      <a href="./citas-asignadas.html" class="doctor-menu-item">
         <img src="../assets/icons/lista.png" alt="">
         <span>Citas asignadas</span>
       </a>
 
-      <a href="#" class="doctor-menu-item">
+      <a href="./crear-agenda.html" class="doctor-menu-item">
         <img src="../assets/icons/cita.png" alt="">
         <span>Crear agenda</span>
       </a>
     </nav>
 
-    <a href="#" class="doctor-logout">
+    <a href="#" class="doctor-logout" id="logoutBtn">
       <img src="../assets/icons/logout.png" alt="">
       <span>Cerrar sesión</span>
     </a>
@@ -42,28 +42,28 @@
     <h1>Menu principal</h1>
 
     <section class="doctor-summary-card">
-
-      <h2>Hola Dr Juanita</h2>
+      
+      <h2 id="nombreDoctor" style="color: darkblue;"></h2>
 
       <div class="stats-grid">
 
         <div class="stat-card">
-          <strong>10</strong>
+          <strong id="citasHoy">0</strong>
           <span>Citas hoy</span>
         </div>
 
         <div class="stat-card">
-          <strong>4</strong>
+          <strong id="citasPendientes">0</strong>
           <span>Citas Pendientes</span>
         </div>
 
         <div class="stat-card danger">
-          <strong>3</strong>
+          <strong id="citasCanceladas">0</strong>
           <span>Citas Canceladas</span>
         </div>
 
         <div class="stat-card success">
-          <strong>2</strong>
+          <strong id="citasAtendidas">0</strong>
           <span>Citas Atendidas</span>
         </div>
 
@@ -80,32 +80,42 @@
 
         <div class="bar-chart">
           <div class="bar-item">
-            <div class="bar bar-10"></div>
+            <div class="bar bar-10" id="citasHoyBar"></div>
             <span>Citas hoy</span>
           </div>
 
           <div class="bar-item">
-            <div class="bar bar-4"></div>
+            <div class="bar bar-4" id="citasPendientesBar"></div>
             <span>Citas Pendientes</span>
           </div>
 
           <div class="bar-item">
-            <div class="bar bar-3"></div>
+            <div class="bar bar-3" id="citasCanceladasBar"></div>
             <span>Citas Canceladas</span>
           </div>
 
           <div class="bar-item">
-            <div class="bar bar-2"></div>
+            <div class="bar bar-2" id="citasAtendidasBar"></div>
             <span>Citas Atendidas</span>
           </div>
         </div>
       </div>
+  <section class="doctor-summary-card" style="margin-top: 20px; color: rgb(1, 48, 119) ;">
 
+  <h2>Próximas citas</h2>
+
+  <div id="listaCitasDoctor">
+
+  </div>
+
+</section>
     </section>
+  
 
   </main>
 
 </div>
 
 </body>
+<script src="../js/menuDoctor.js"></script>
 </html>

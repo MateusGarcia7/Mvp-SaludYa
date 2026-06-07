@@ -19,15 +19,22 @@
 
         <nav class="menu">
 
-            <a href="#" class="menu-item active">
+            <a href="../pages/asignacion.html" class="menu-item active">
                 <img src="../assets/icons/cita.png">
                 <span>Asignación de cita</span>
             </a>
 
-            <a href="#" class="menu-item">
+            <a href="../pages/citas-asignadas.html" class="menu-item">
                 <img src="../assets/icons/lista.png">
                 <span>Mis citas</span>
             </a>
+
+            <a href="./crear-agenda.html" class="doctor-menu-item" id="crearAgenda">
+        <img src="../assets/icons/cita.png" alt="">
+        <span>Crear agenda</span>
+      </a>
+     
+    </nav>
 
         </nav>
 
@@ -41,27 +48,39 @@
     <!-- CONTENIDO -->
     <main class="content">
 
+        <form id="register-form">
         <h1 id="bienvenida"></h1>
 
         <section class="appointment-card">
 
-            <p class="patient-name">Nombre de paciente</p>
+            <p class="patient-name" id="patient-name"></p>
 
-            <div class="top-filters">
+                
+                <div class="top-filters">
 
                 <div class="filter-box">
                     <label>Fecha Deseada</label>
-                    <input type="text" value="30/04/2026">
+                    <input type="date" id="fecha-deseada">
                 </div>
 
                 <div class="filter-box">
                     <label>Doctor</label>
-                    <input type="text" value="Escoger Medico tratante">
+                    <select id="doctor-select" style=" padding: 15px; border-radius: 5px; border: 1px solid #ccc;background-color: #ffffff;" required>
+                        <option selected disabled>
+                            Seleccione
+                        </option>
+                        <option>
+                            Dr. Juan Pérez
+                        </option>
+                        <option>
+                            Dra. María García
+                        </option>
+                    </select>
                 </div>
 
                 <div class="filter-box">
                     <label>Tipo de atención</label>
-                    <input type="text" value="Presencial / Telesalud">
+                    <input type="text" placeholder="Consulta general, especialidad, etc." id="tipo-atencion">
                 </div>
 
             </div>
@@ -70,30 +89,21 @@
 
                 <div class="left-form">
 
-                    <input type="text" placeholder="Nombre completo del paciente">
-
-                    <input type="text" placeholder="Tipo de documento del paciente">
-
-                    <input type="text" placeholder="Numero de documento">
-
-                    <input type="text" placeholder="Fecha de cita">
-
-                    <input type="text" placeholder="Tipo de atencion">
-
-                    <textarea placeholder="Motivo consulta"></textarea>
+                    <textarea placeholder="Motivo consulta" id="motivo-consulta"></textarea>
 
                 </div>
 
                 <div class="right-form">
 
-                    <button class="btn-primary">
+                    <button class="btn-primary" type="submit">
                         Confirmar cita
                     </button>
 
                 </div>
 
             </div>
-
+            
+        </form> 
         </section>
 
     </main>

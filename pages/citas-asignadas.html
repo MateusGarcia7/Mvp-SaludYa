@@ -17,20 +17,20 @@
     </div>
 
     <nav class="doctor-menu">
-      <a href="#" class="doctor-menu-title">Citas asignadas</a>
+      <a href="./citas-asignadas.html" class="doctor-menu-title">Citas asignadas</a>
 
-      <a href="menu-doctor.html" class="doctor-menu-item">
+      <a href="./asignacion.html" class="doctor-menu-item">
         <img src="../assets/icons/lista.png" alt="">
         <span>Menu Principal</span>
       </a>
 
-      <a href="#" class="doctor-menu-item">
+      <a href="./crear-agenda.html" class="doctor-menu-item" id="crearAgenda">
         <img src="../assets/icons/cita.png" alt="">
         <span>Crear agenda</span>
       </a>
     </nav>
 
-    <a href="#" class="doctor-logout">
+    <a href="#" class="doctor-logout" id="logout">
       <img src="../assets/icons/logout.png" alt="">
       <span>Cerrar sesión</span>
     </a>
@@ -39,75 +39,22 @@
 
   <main class="agenda-content">
 
-    <h1>Agenda del dia</h1>
+    <h1>Citas agendadas</h1>
 
     <section class="agenda-card">
 
-      <table class="agenda-table">
+  <table class="agenda-table">
 
         <thead>
           <tr>
-            <th>Hora</th>
+            <th>Fecha</th>
             <th>Paciente</th>
             <th>Atencion</th>
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td>9:00 am</td>
-            <td>Maria Gomez</td>
-            <td>
-              <div class="attention-cell">
-                <span>Consulta General</span>
-                <button>Confirmar</button>
-                <button>Datos del paciente</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>10:00 am</td>
-            <td class="empty-text">Cita no asignada</td>
-            <td class="empty-text">Sin asignar</td>
-          </tr>
-
-          <tr>
-            <td>11:00 am</td>
-            <td>Karen Martinez</td>
-            <td>
-              <div class="attention-cell">
-                <span>Consulta General</span>
-                <button>Confirmar</button>
-                <button>Datos del paciente</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>12:00 pm</td>
-            <td>Ana Lopez</td>
-            <td>
-              <div class="attention-cell">
-                <span>Control</span>
-                <button>Confirmar</button>
-                <button>Datos del paciente</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>02:00 pm</td>
-            <td>Juanita Perez</td>
-            <td>
-              <div class="attention-cell">
-                <span>Consulta General</span>
-                <button>Confirmar</button>
-                <button>Datos del paciente</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
+        <tbody id="listaCitas"> 
+       
 
       </table>
 
@@ -118,4 +65,5 @@
 </div>
 
 </body>
+<script src="../js/citasAsignadas.js"></script>
 </html>
