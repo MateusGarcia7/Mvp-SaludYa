@@ -31,6 +31,7 @@ const nuevaCita = {
   fechaDeseada: fechaDeseada.value,
   tipoAtencion: tipoAtencion.value,
   doctor: doctorSelect.value,
+  estado: "pendiente",
 };
 citas.push(nuevaCita);
 localStorage.setItem("citas", JSON.stringify(citas));
