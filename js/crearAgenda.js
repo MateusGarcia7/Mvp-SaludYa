@@ -17,6 +17,48 @@ if (usuario.role !== "doctor" && usuario.role !== "admin") {
 document.getElementById("doctorNombre").value = usuario.nombre;
 
 let fechaSeleccionada = null;
+
+function formatDate(year, month, day) {
+  return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function isAgendaDuplicate(agendas, doctorId, fecha, horaInicio, horaFin) {
+  return agendas.some(
+    (agenda) =>
+      agenda.doctorId === doctorId &&
+      agenda.fecha === fecha &&
+      agenda.horaInicio === horaInicio &&
+      agenda.horaFin === horaFin,
+  );
+}
+
+function validateAgendaData(fecha, agendas, doctorId, horaInicio, horaFin) {
+  if (!fecha) {
+    return { valid: false, message: "Seleccione una fecha" };
+  }
+
+  if (isAgendaDuplicate(agendas, doctorId, fecha, horaInicio, horaFin)) {
+    return { valid: false, message: "Ya existe una agenda con esa fecha y horario" };
+  }
+
+  return { valid: true, message: "" };
+}
+
+function createAgendaObject(usuario, fecha, horaInicio, horaFin) {
+  return {
+    id: Date.now(),
+    doctorId: usuario.id,
+    doctorNombre: usuario.nombre,
+    fecha,
+    horaInicio,
+    horaFin,
+  };
+}
+
+function getFechaSeleccionada() {
+  return fechaSeleccionada;
+}
+
 function renderCalendar() {
   if (!monthYear || !calendarDates) return;
 
@@ -56,21 +98,19 @@ function renderCalendar() {
     const button = document.createElement("button");
     button.textContent = day;
 
-   button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".calendar-dates button").forEach((btn) =>
+        btn.classList.remove("selected"),
+      );
 
-  document.querySelectorAll(".calendar-dates button")
-    .forEach(btn => btn.classList.remove("selected"));
+      button.classList.add("selected");
 
-  button.classList.add("selected");
-
-  fechaSeleccionada =
-    `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-});
+      fechaSeleccionada = formatDate(year, month, day);
+    });
 
     calendarDates.appendChild(button);
   }
 }
-
 
 prevMonth?.addEventListener("click", () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
@@ -88,52 +128,27 @@ const btnGuardarAgenda = document.getElementById("btnGuardarAgenda");
 
 btnGuardarAgenda.addEventListener("click", () => {
   const horaInicio = document.getElementById("horaInicio").value;
-
   const horaFin = document.getElementById("horaFin").value;
-  console.log(horaInicio, horaFin);
 
-  if (!fechaSeleccionada) {
-    alert("Seleccione una fecha");
+  const validation = validateAgendaData(
+    fechaSeleccionada,
+    JSON.parse(localStorage.getItem("agendas")) || [],
+    usuario.id,
+    horaInicio,
+    horaFin,
+  );
 
+  if (!validation.valid) {
+    alert(validation.message);
     return;
   }
 
   let agendas = JSON.parse(localStorage.getItem("agendas")) || [];
-
-  const agendaExistente = agendas.find(
-    (agenda) =>
-      agenda.doctorId === usuario.id &&
-      agenda.fecha === fechaSeleccionada &&
-      agenda.horaInicio === horaInicio &&
-      agenda.horaFin === horaFin,
-  );
-
-  if (agendaExistente) {
-    alert("Ya existe una agenda con esa fecha y horario");
-
-    return;
-  }
-
-  const nuevaAgenda = {
-    id: Date.now(),
-
-    doctorId: usuario.id,
-
-    doctorNombre: usuario.nombre,
-
-    fecha: fechaSeleccionada,
-
-    horaInicio,
-
-    horaFin,
-  };
+  const nuevaAgenda = createAgendaObject(usuario, fechaSeleccionada, horaInicio, horaFin);
 
   agendas.push(nuevaAgenda);
-
   localStorage.setItem("agendas", JSON.stringify(agendas));
-
   alert("Agenda creada correctamente");
-
   cargarAgendas();
 });
 
@@ -200,3 +215,14 @@ if (btnLogout) {
 }
 
 cargarAgendas();
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    renderCalendar,
+    formatDate,
+    validateAgendaData,
+    createAgendaObject,
+    eliminarAgenda,
+    getFechaSeleccionada,
+  };
+}
