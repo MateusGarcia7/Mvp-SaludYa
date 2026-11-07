@@ -62,6 +62,10 @@ function handleRegisterSubmit(e) {
     alert("Todos los campos son obligatorios");
     return;
   }
+  if (password !== confirmPassword) {
+  alert("Las contraseñas no coinciden");
+  return;
+}
 
   let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -83,8 +87,10 @@ if (form) {
 
 const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
-if (usuario) {
+if (usuario?.role === "paciente") {
   safeRedirect("../pages/asignacion.html");
+} else if (usuario?.role === "doctor" || usuario?.role === "admin") {
+  safeRedirect("../pages/menu-doctor.html");
 }
 
 function safeRedirect(url) {

@@ -66,16 +66,22 @@
                 <div class="filter-box">
                     <label>Doctor</label>
                     <select id="doctor-select" style=" padding: 15px; border-radius: 5px; border: 1px solid #ccc;background-color: #ffffff;" required>
-                        <option selected disabled>
-                            Seleccione
-                        </option>
-                        <option>
-                            Dr. Juan Pérez
-                        </option>
-                        <option>
-                            Dra. María García
+                        <option value="" selected disabled>
+                            Seleccione un doctor
                         </option>
                     </select>
+                    <label for="hora-cita">Hora disponible</label>
+
+<select
+    id="hora-cita"
+    required
+    disabled
+    style="padding: 15px; border-radius: 5px; border: 1px solid #ccc; background-color: #FFFFFF;"
+>
+    <option value="">
+        Selecciona primero una fecha y un doctor
+    </option>
+</select>
                 </div>
 
                 <div class="filter-box">

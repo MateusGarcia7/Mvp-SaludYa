@@ -7,7 +7,12 @@ formn.addEventListener('submit', (e) => {
   const password = document.getElementById('password').value.trim();
 
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-const usuarioEncontrado = usuarios.find(usuario => usuario.email === email && usuario.password === password);
+const usuarioEncontrado = usuarios.find(
+    usuario =>
+        usuario.email === email &&
+        usuario.password === password &&
+        usuario.rol === "paciente"
+);
 
   if (usuarioEncontrado) {
 
@@ -26,9 +31,5 @@ localStorage.setItem(
   } else {
     alert('Credenciales incorrectas');
   }
-  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
-  if (usuario) {
-    window.location.href = "../pages/asignacion.html";
-  }
 });

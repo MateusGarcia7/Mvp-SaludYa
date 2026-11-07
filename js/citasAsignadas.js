@@ -3,11 +3,14 @@ let logout = document.getElementById("logout");
 
 logout.addEventListener("click", (e) => {
   localStorage.removeItem("usuarioLogueado");
-  window.location.href = "login-paciente.html";
+  window.location.href = "../index.html";
   e.preventDefault();
 });
 
 const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+if (!usuarioLogueado) {
+    window.location.replace("login-paciente.html");
+} else {
 function mostrarCitas(listaCitas) {
   const lista = document.getElementById("listaCitas");
 
@@ -89,6 +92,7 @@ if (
   (usuarioLogueado.role !== "doctor" && usuarioLogueado.role !== "admin")
 ) {
   crearAgenda.style.display = "none";
+}
 }
 
   

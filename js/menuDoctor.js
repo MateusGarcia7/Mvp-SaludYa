@@ -11,7 +11,13 @@ if (usuario.role !== "doctor" && usuario.role !== "admin") {
 document.getElementById("nombreDoctor").textContent =
   `Hola Dr. ${usuario.nombre}`;
 
-const citas = JSON.parse(localStorage.getItem("citas")) || [];
+const todasLasCitas = JSON.parse(localStorage.getItem("citas")) || [];
+
+const citas = usuario.role === "admin"
+    ? todasLasCitas
+    : todasLasCitas.filter(
+        cita => Number(cita.doctorId) === Number(usuario.id)
+    );
 
 const hoy = new Date().toISOString().split("T")[0];
 
@@ -62,3 +68,13 @@ document.getElementById("citasCanceladasBar").style.height =
 
 document.getElementById("citasAtendidasBar").style.height =
   `${citasAtendidas * 10}px`;
+
+  const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    localStorage.removeItem("usuarioLogueado");
+
+    window.location.href = "../index.html";
+});

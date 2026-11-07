@@ -19,7 +19,7 @@ const usuarioEncontrado = usuarios.find(usuario => usuario.email === email && us
     
    const sesion = {
     id: usuarioEncontrado.id,
-    nombre: usuarioEncontrado.nombre,
+    nombre: usuarioEncontrado.name,
     email: usuarioEncontrado.email,
     role: usuarioEncontrado.rol
 };
@@ -32,9 +32,5 @@ localStorage.setItem(
   } else {
     alert('Credenciales incorrectas');
   }
-  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
-  if (usuario) {
-    window.location.href = "../pages/menu-doctor.html";
-  }
 });
